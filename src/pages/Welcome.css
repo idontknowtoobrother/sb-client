@@ -1,0 +1,25 @@
+.home__body {
+
+}
+.home__information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15.62vw 0 10.41vw 0;
+}
+
+.home__information > .title {
+    font-size: 5.2vw;
+}
+
+.home__information > .description {
+    font-size: 1.56vw;
+}
+
+.home__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9.89vw;
+}

@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-style: light;
+    src: url('./assets/fonts/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-style: bold;
+    src: url('./assets/fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./assets/fonts/NotoSansThai-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto';
+    font-weight: 600;
+    font-style: bold;
+    src: url('./assets/fonts/NotoSansThai-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Satisfy';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./assets/fonts/Satisfy-Regular.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Satisfy', 'Poppins', 'Noto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: black;
+    --secondary-color: white;
+    --third-color: #2a2a2a;
+}
