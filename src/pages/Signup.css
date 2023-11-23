@@ -1,0 +1,13 @@
+
+.signup__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    padding-right: 32%;
+    gap: 5.41vw;
+}
+
+.signup__adjust {
+    margin-right: 10%;
+}

@@ -1,1 +1,9 @@
-
+.login__wrapper {
+    margin-top: 12.23vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8.02vw;
+}

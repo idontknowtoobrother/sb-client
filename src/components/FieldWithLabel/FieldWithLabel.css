@@ -1,0 +1,19 @@
+.field__with__label {
+    display: flex;
+}
+.field__label {
+    margin-right: 2.5vw;
+    font-size: 2.08vw;
+}
+
+.field__input {
+    border-radius: 10px;
+    background: #000;
+    color: var(--secondary-color);
+    border: none;
+    outline: none;
+    font-size: 2.08vw;
+    width: 37.6vw;
+    height: 3.64vw;
+    padding-left: 0.52vw;
+}
