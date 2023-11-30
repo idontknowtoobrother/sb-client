@@ -10,6 +10,7 @@
     min-height: 42.70vw;
     align-items: center;
 }
+
 .reservation__field__wrapper {
     display: flex;
     flex-direction: column;
@@ -17,4 +18,20 @@
     gap: 3.64vw;
     height: 70%;
     padding-right: 18.15%;
+}
+
+.reservation__history__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.14vw;
+    width: 59.89vw;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 42.18vw;
+    padding: 0.52vw;
+}
+
+.reservation__history__wrapper::-webkit-scrollbar {
+    display: none;
 }

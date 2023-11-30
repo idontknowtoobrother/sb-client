@@ -40,7 +40,7 @@ export default function CReservation() {
 						engText: "history reservation",
 						thaiText: "ประวัติการจอง",
 						handleClick: () => {
-							console.log("history reservation");
+							naviget('/customer/history-reservation')
 						},
 					},
 				]}

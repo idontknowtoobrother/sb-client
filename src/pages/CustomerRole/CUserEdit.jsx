@@ -40,7 +40,7 @@ export default function CUserEdit() {
 						engText: "history reservation",
 						thaiText: "ประวัติการจอง",
 						handleClick: () => {
-							console.log("history reservation");
+							naviget('/customer/history-reservation')
 						},
 					},
 				]}

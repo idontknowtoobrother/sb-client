@@ -38,7 +38,7 @@ export default function CWelcome() {
 						engText: "history reservation",
 						thaiText: "ประวัติการจอง",
 						handleClick: () => {
-							console.log("history reservation");
+							naviget('/customer/history-reservation')
 						},
 					},
 				]}
