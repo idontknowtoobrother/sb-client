@@ -24,14 +24,14 @@ export default function CWelcome() {
 						engText: "reservation",
 						thaiText: "จองคิว",
 						handleClick: () => {
-							console.log("reservation");
+                            naviget('/customer/reservation')
 						},
 					},
 					{
 						engText: "account detial",
 						thaiText: "ข้อมูลส่วนตัว",
 						handleClick: () => {
-							console.log("account detial");
+							naviget('/customer/user-edit')
 						},
 					},
 					{

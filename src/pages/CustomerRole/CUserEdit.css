@@ -1,0 +1,22 @@
+.action__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    position: absolute;
+    left: 62.5vw;
+    top: 27.60vw;
+    transform: translate(-50%, -50%);
+    width: 67.70vw;
+    height: 42.70vw;
+    align-items: center;
+}
+
+.reservation__field__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3.64vw;
+    height: 70%;
+    padding-right: 18.15%;
+}

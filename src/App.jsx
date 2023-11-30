@@ -5,7 +5,8 @@ import Welcome from './pages/Welcome.jsx'
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import CWelcome from "./pages/CustomerRole/CWelcome.jsx";
-
+import CReservation from "./pages/CustomerRole/CReservation.jsx";
+import CUserEdit from "./pages/CustomerRole/CUserEdit.jsx";
 function App() {
 	return (
         <div>
@@ -14,6 +15,9 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/customer/welcome" element={<CWelcome/>} />
+                <Route path="/customer/reservation" element={<CReservation/>} />
+                <Route path="/customer/user-edit" element={<CUserEdit/>} />
+                
             </Routes>
         </div>
     );
