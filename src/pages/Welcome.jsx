@@ -18,9 +18,9 @@ export default function Home() {
 		<>
 			<Header />
 			<div className="home__body">
-				<div className="home__information">
-					<div className="title">SIRINYA BEAUTY</div>
-					<div className="description">WE KNOW BEAUTIFUL</div>
+				<div className="home__information" >
+					<div className="title">Sirinya beauty</div>
+					<div className="description">we know beautiful</div>
 				</div>
 				<div className="home__actions">
 					<MainButton text="Login" handleClick={handleGotoLogin}/>
