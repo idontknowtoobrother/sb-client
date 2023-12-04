@@ -1,0 +1,19 @@
+.manage_queue {
+    font-size: 2.08vw;
+    display: flex;
+    gap: 1.04vw;
+}
+
+.manage_queue > .queue_detail {
+    border-radius: .52vw;
+    background: var(--main-color);
+    color: var(--secondary-color);
+    padding: 0 2.08vw 0 2.08vw;
+}
+.action_queue_btn {
+    display: flex;
+    gap: 1.04vw;
+}
+.image_queue_btn {
+    cursor: pointer;
+}

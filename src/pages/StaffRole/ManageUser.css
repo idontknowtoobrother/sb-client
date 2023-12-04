@@ -1,0 +1,18 @@
+.manage_container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 27.04vw;
+    top: 8.20vw;
+    width: 67.70vw;
+    height: 42.70vw;
+    overflow: hidden;
+    overflow-y: scroll;
+    align-items: center;
+    gap: 3.68vw;
+}
+
+.manage_container::-webkit-scrollbar {
+    display: none;
+}
+
