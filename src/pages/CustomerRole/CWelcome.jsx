@@ -2,9 +2,17 @@ import "./CWelcome.css";
 import Header from "../../components/Header/Header";
 import LeftNav from "../../components/LeftNav/LeftNav";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../store/UserSlice";
 
 export default function CWelcome() {
-	const naviget = useNavigate();
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const handleLogout = () => {
+		dispatch(logoutUser()).then((response) => {
+			navigate("/");
+		})
+	}
 
 	return (
 		<>
@@ -12,9 +20,7 @@ export default function CWelcome() {
 				listButton={[
 					{
 						text: "logout",
-						handleClick: () => {
-							naviget("/");
-						},
+						handleClick: handleLogout,
 					},
 				]}
 			/>
@@ -24,21 +30,21 @@ export default function CWelcome() {
 						engText: "reservation",
 						thaiText: "จองคิว",
 						handleClick: () => {
-                            naviget('/customer/reservation')
+                            navigate('/customer/reservation')
 						},
 					},
 					{
 						engText: "account detial",
 						thaiText: "ข้อมูลส่วนตัว",
 						handleClick: () => {
-							naviget('/customer/user-edit')
+							navigate('/customer/user-edit')
 						},
 					},
 					{
 						engText: "history reservation",
 						thaiText: "ประวัติการจอง",
 						handleClick: () => {
-							naviget('/customer/history-reservation')
+							navigate('/customer/history-reservation')
 						},
 					},
 				]}

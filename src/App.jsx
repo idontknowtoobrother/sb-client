@@ -10,21 +10,60 @@ import CUserEdit from "./pages/CustomerRole/CUserEdit.jsx";
 import CHistoryReservation from "./pages/CustomerRole/CHistoryReservation.jsx";
 import ManageUser from "./pages/StaffRole/ManageUser.jsx";
 import ManageQueue from "./pages/StaffRole/ManageQueue.jsx";
+import { useSelector } from "react-redux";
 
 
 function App() {
+
+    const { user } = useSelector((state) => state.user);
+    const isAuthenticated = user !== null;
+    const isStaff = user?.role === "staff";
+    const navigateToCustomerWelcome = () => {
+        return <Navigate to="/customer/welcome" />
+    }
+    const navigetToLogin = () => {
+        return <Navigate to="/login" />
+    }
+
 	return (
         <div>
             <Routes>
-                <Route path="/" element={<Welcome />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/customer/welcome" element={<CWelcome/>} />
-                <Route path="/customer/reservation" element={<CReservation/>} />
-                <Route path="/customer/user-edit" element={<CUserEdit/>} />
-                <Route path="/customer/history-reservation" element={<CHistoryReservation/>} />
-                <Route path="/management/user" element={<ManageUser/>}/>
-                <Route path="/management/queue" element={<ManageQueue/>}/>
+                <Route path="/" element={
+                    isAuthenticated ? navigateToCustomerWelcome() : 
+                    <Welcome />
+                }/>
+                <Route path="/login" element={
+                    isAuthenticated ? navigateToCustomerWelcome() : 
+                    <Login /> 
+                }/>
+                <Route path="/signup" element={
+                    isAuthenticated ? navigateToCustomerWelcome() : 
+                    <Signup />
+                } />
+                <Route path="/customer/welcome" element={ 
+                    isAuthenticated ? <CWelcome/> : 
+                    navigetToLogin()
+                } />
+                <Route path="/customer/reservation" element={
+                    isAuthenticated ? <CReservation/> :
+                    navigetToLogin()
+                } />
+                <Route path="/customer/user-edit" element={
+                    isAuthenticated ? <CUserEdit/> :
+                    navigetToLogin() 
+                } />
+                <Route path="/customer/history-reservation" element={
+                    isAuthenticated ? <CHistoryReservation/> : 
+                    navigetToLogin()    
+                } />
+                <Route path="/management/user" element={
+                    isAuthenticated && isStaff ? <ManageUser/> :
+                    navigetToLogin()
+                }/>
+                <Route path="/management/queue" element={
+                    isAuthenticated && isStaff ? <ManageQueue/> : 
+                    navigetToLogin()
+                }/>
             </Routes>
         </div>
     );

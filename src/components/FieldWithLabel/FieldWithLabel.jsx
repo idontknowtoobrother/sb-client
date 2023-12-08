@@ -1,6 +1,6 @@
 import './FieldWithLabel.css'
 
-export default function FieldWithLabel({ label, type, disabled, placeholder, id, labelForId,  handleChange }) {
+export default function FieldWithLabel({ label, type, disabled, placeholder, id, labelForId, value, handleChange }) {
 
     return (
         <div className='field__with__label'>
@@ -9,6 +9,7 @@ export default function FieldWithLabel({ label, type, disabled, placeholder, id,
                 placeholder={placeholder}
                 disabled={disabled}
                 className='field__input'
+                value={value}
                 type={type}
                 onChange={handleChange}
             />

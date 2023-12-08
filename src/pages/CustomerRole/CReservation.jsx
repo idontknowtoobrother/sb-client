@@ -4,9 +4,17 @@ import LeftNav from "../../components/LeftNav/LeftNav";
 import FieldWithLabel from "../../components/FieldWithLabel/FieldWithLabel";
 import { useNavigate } from "react-router-dom";
 import MainButton from "../../components/MainButton/MainButton";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../store/UserSlice";
 
 export default function CReservation() {
-	const naviget = useNavigate();
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const handleLogout = () => {
+		dispatch(logoutUser()).then((response) => {
+			navigate("/");
+		});
+	};
 
 	return (
 		<>
@@ -14,9 +22,7 @@ export default function CReservation() {
 				listButton={[
 					{
 						text: "logout",
-						handleClick: () => {
-							naviget("/");
-						},
+						handleClick: handleLogout,
 					},
 				]}
 			/>
@@ -26,21 +32,21 @@ export default function CReservation() {
 						engText: "reservation",
 						thaiText: "จองคิว",
 						handleClick: () => {
-							naviget('/customer/reservation')
+							navigate("/customer/reservation");
 						},
 					},
 					{
 						engText: "account detial",
 						thaiText: "ข้อมูลส่วนตัว",
 						handleClick: () => {
-							naviget('/customer/user-edit')
+							navigate("/customer/user-edit");
 						},
 					},
 					{
 						engText: "history reservation",
 						thaiText: "ประวัติการจอง",
 						handleClick: () => {
-							naviget('/customer/history-reservation')
+							navigate("/customer/history-reservation");
 						},
 					},
 				]}
