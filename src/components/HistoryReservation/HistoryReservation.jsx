@@ -3,14 +3,18 @@ import './HistoryReservation.css';
 import FailedIcon from '../../assets/svgs/failed.svg?react';
 import ApprovedIcon from '../../assets/svgs/approved.svg?react';
 
-export default function HistoryReservation({day, time, picture, status, statusImage}){
-    const data = {
+export default function HistoryReservation({date, picture, status, statusImage}){
+    const _date = new Date(date);
+    const time = _date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const day = _date.toLocaleDateString('th-TH', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    const data   = {
         day: day || '2021-10-10',
         time: time || '10:00',
         picture: picture || 'https://media.discordapp.net/attachments/1166046630349377617/1178930986831065099/403408765_1110277243319967_5081922264756127598_n.png?format=webp&quality=lossless',
         status: status,
-        statusLabel: status ? 'approved' : 'failed',
-        statusImage: status ? <ApprovedIcon /> : <FailedIcon />
+        statusLabel: status === null ? 'pending (รอยืนยัน)' : status === false ? 'failed' : 'approved',
+        statusImage: status === null ? <></> : status === false ? <FailedIcon/> : <ApprovedIcon/> 
     }
     
 

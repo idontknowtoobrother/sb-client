@@ -11,6 +11,7 @@ import CHistoryReservation from "./pages/CustomerRole/CHistoryReservation.jsx";
 import ManageUser from "./pages/StaffRole/ManageUser.jsx";
 import ManageQueue from "./pages/StaffRole/ManageQueue.jsx";
 import { useSelector } from "react-redux";
+import ManageUserEdit from "./pages/StaffRole/ManageUserEdit.jsx";
 
 
 function App() {
@@ -60,10 +61,15 @@ function App() {
                     isAuthenticated && isStaff ? <ManageUser/> :
                     navigetToLogin()
                 }/>
+                 <Route path="/management/user/:userId"  element={
+                    isAuthenticated && isStaff ? <ManageUserEdit/> : 
+                    navigetToLogin()
+                }/>
                 <Route path="/management/queue" element={
                     isAuthenticated && isStaff ? <ManageQueue/> : 
                     navigetToLogin()
                 }/>
+               
             </Routes>
         </div>
     );

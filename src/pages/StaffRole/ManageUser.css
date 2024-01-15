@@ -16,3 +16,24 @@
     display: none;
 }
 
+.p-button-danger {
+    background: linear-gradient(90deg, #A70000 0%, #6A1313 100%);
+    padding: 0.26vw;
+    margin: 8px;
+    border-radius: 0.26vw;
+    border: 0;
+    font-size: 1vw;
+}
+.p-button-danger:hover {
+    background: #ff0000;
+}
+
+.p-button-normal {
+    background: white;
+    color: black;
+    padding: 0.26vw 0.52vw 0.26vw 0.52vw;
+    margin: 8px;
+    border-radius: 0.26vw;
+    border: 0;
+    font-size: 1vw;
+}
