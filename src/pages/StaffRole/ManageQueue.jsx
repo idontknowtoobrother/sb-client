@@ -37,7 +37,7 @@ export default function ManageQueue() {
 
 	const rejectDialog = (reservation) => {
         confirmDialog({
-            message: `Do you want to reject this resercation "${reservation?.userId?.tel}" ?`,
+            message: `Do you want to reject this resercation "${reservation?.userId?.tel}"?`,
             header: 'Reject Reservation Confirmation',
             icon: 'pi pi-info-circle',
             defaultFocus: 'reject',
