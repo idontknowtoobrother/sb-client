@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import LeftNav from "../../components/LeftNav/LeftNav";
 import ManageQueueItem from '../../components/ManageItem/ManageQueueItem';
-import { approveReservation, getAllReservations } from '../../api';
+import { approveReservation, getAllReservations, rejectReservation } from '../../api';
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../store/UserSlice';
@@ -34,6 +35,34 @@ export default function ManageQueue() {
         window.location.reload();
     }
 
+	const rejectDialog = (reservation) => {
+        confirmDialog({
+            message: `Do you want to reject this resercation "${reservation?.userId?.tel}" ?`,
+            header: 'Reject Reservation Confirmation',
+            icon: 'pi pi-info-circle',
+            defaultFocus: 'reject',
+            acceptLabel: 'Reject',
+            acceptClassName: 'p-button-danger',
+            rejectClassName: 'p-button-normal',
+            style: {
+                background: 'black',
+                padding: '1rem',
+                color: 'white',
+                fontSize: '1.5rem',
+                borderRadius: '1rem',
+            },
+            accept: () => {
+				rejectReservation(reservation).then((response) => {
+					if (!response) {
+						alert('Reject fail')
+						return
+					}
+					window.location.reload();
+				})
+            },
+        });
+    };
+
     useEffect(() => {
         const _getAllQueue = async () => {
             const response = await getAllReservations();
@@ -48,6 +77,7 @@ export default function ManageQueue() {
 
 	return (
 		<>
+            <ConfirmDialog />
 			<Header
 				listButton={[
 					{
@@ -92,6 +122,9 @@ export default function ManageQueue() {
                                 checkHandler={() => {
                                     handleApprove(reservation);
                                 }}
+								deleteHandler={() => {
+									rejectDialog(reservation)
+								}}
                             />
                         )
                     })

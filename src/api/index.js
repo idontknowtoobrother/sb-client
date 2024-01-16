@@ -123,3 +123,23 @@ export const patchUserByStaff = async (userData) => {
         throw error; // Rethrow the error to propagate it further
     }
 }
+
+
+
+export const rejectReservation = async (reservation) => {
+    try {
+        console.log(reservation);
+        const request = await axios.patch(`${api.apiEndpoint}/queue/${reservation._id}`, {
+            accepted: false
+        }, {
+            withCredentials: true
+        });
+
+        console.log('Response Status:', request.status);
+        console.log('Response Data:', request.data);
+        return request.data;
+    } catch (error) {
+        console.error('[approveReservation-error]:', error);
+        throw error; // Rethrow the error to propagate it further
+    }
+}
